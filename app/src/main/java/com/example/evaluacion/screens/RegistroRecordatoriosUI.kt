@@ -18,18 +18,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.domain.Recordatorio
-import com.example.evaluacion.viewmodel.RecordatorioViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
 
 @Composable
 fun RegistroRecordatoriosUI(navController: NavController) {
-    val viewModel: RecordatorioViewModel = viewModel()
+    //val viewModel: RecordatorioViewModel = viewModel()
 
     var nombre by remember { mutableStateOf("") }
     var fecha by remember { mutableStateOf("") }
     var nivel by remember { mutableStateOf("") }
+    //private val guardarRecordatorio= GuardarRecordatorio()
 
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
@@ -68,8 +70,10 @@ fun RegistroRecordatoriosUI(navController: NavController) {
 
         Button(
             onClick = {
-                val nuevoRecordatorio = Recordatorio(nombre = nombre, fecha = fecha, nivel = nivel)
-                viewModel.guardarRecordatorio(nuevoRecordatorio)
+                CoroutineScope(Dispatchers.IO).launch {
+                    //appRoomDatabase.recordatorioDao().insert(Recordatorio(nombre, fecha, nivel))
+                }
+
             },
             modifier = Modifier.fillMaxWidth()
         ) {
