@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -13,10 +14,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-
+import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(navController : NavController){
+fun SplashScreen(navController: NavController) {
+    LaunchedEffect(Unit) {
+        delay(5000)
+        navController.navigate("lista")
+    }
+
     Box(
         modifier = Modifier.fillMaxSize().background(
             Brush.verticalGradient(
@@ -24,21 +30,21 @@ fun SplashScreen(navController : NavController){
             )
         ),
         contentAlignment = Alignment.Center
-    ){
-        Column(horizontalAlignment = Alignment.CenterHorizontally){
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 text = "RecordatoriosApp",
-                fontSize = 50.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(
                 text = "Camila Adriana Carvajal Gusman",
-                fontSize = 20.sp,
+                fontSize = 10.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(
                 text = "Recuperatorio de Programación de Dispositivos Móviles",
-                fontSize = 20.sp,
+                fontSize = 10.sp,
                 fontWeight = FontWeight.Bold
             )
         }
