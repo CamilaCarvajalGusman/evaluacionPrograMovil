@@ -4,4 +4,5 @@ sealed class Screen(val route: String) {
     object SplashScreen : Screen("inicio")
     object RegistroRecordatorios : Screen("registro")
     object ListaRecordatorios : Screen("lista")
+    object RecodatorioScreen: Screen("recordatorio_screen")
 }
