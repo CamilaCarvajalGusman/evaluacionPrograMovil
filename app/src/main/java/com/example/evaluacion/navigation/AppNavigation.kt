@@ -6,10 +6,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.evaluacion.screens.ListaRecordatoriosUI
 import com.example.evaluacion.screens.RecordatorioScreen
 import com.example.evaluacion.screens.RegistroRecordatoriosUI
 import com.example.evaluacion.screens.SplashScreen
-import com.ucb.despensa.navigation.ListaRecordatoriosUI
+
 
 @Composable
 fun AppNavigation() {
