@@ -13,6 +13,9 @@ import com.ucb.despensa.navigation.ListaRecordatoriosUI
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
+
+    //val recordatorioViewModel: RecordatorioViewModel = viewModel()
+
     NavHost(
         navController = navController,
         startDestination = Screen.SplashScreen.route,
@@ -30,7 +33,11 @@ fun AppNavigation() {
         composable(Screen.ListaRecordatorios.route) {
             ListaRecordatoriosUI(navController)
         }
-        composable("registro") { RegistroRecordatoriosUI(navController) }
-        composable("lista") { ListaRecordatoriosUI(navController) }
+        composable("registro") {
+            RegistroRecordatoriosUI(navController)
+        }
+        composable("lista") {
+            ListaRecordatoriosUI(navController)
+        }
     }
 }

@@ -20,7 +20,7 @@ import kotlinx.coroutines.delay
 fun SplashScreen(navController: NavController) {
     LaunchedEffect(Unit) {
         delay(5000)
-        navController.navigate("lista")
+        navController.navigate("registro")
     }
 
     Box(
@@ -34,17 +34,17 @@ fun SplashScreen(navController: NavController) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 text = "RecordatoriosApp",
-                fontSize = 30.sp,
+                fontSize = 40.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(
                 text = "Camila Adriana Carvajal Gusman",
-                fontSize = 10.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(
                 text = "Recuperatorio de Programación de Dispositivos Móviles",
-                fontSize = 10.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
         }
