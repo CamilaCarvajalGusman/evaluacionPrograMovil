@@ -1,19 +1,17 @@
 package com.example.evaluacion.navigation
 
-import RecordatorioViewModel
-import SplashScreenContent
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.evaluacion.screens.RegistroRecordatoriosUI
+import com.example.evaluacion.screens.SplashScreen
 import com.ucb.despensa.navigation.ListaRecordatoriosUI
 
 @Composable
-fun AppNavigation(navController: NavHostController, viewModel: RecordatorioViewModel) {
+fun AppNavigation() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
@@ -24,15 +22,15 @@ fun AppNavigation(navController: NavHostController, viewModel: RecordatorioViewM
         popExitTransition = { ExitTransition.None }
     ) {
         composable(Screen.SplashScreen.route) {
-            SplashScreenContent(navController)
+            SplashScreen(navController)
         }
         composable(Screen.RegistroRecordatorios.route) {
-            RegistroRecordatoriosUI(navController, viewModel)
+            RegistroRecordatoriosUI(navController)
         }
         composable(Screen.ListaRecordatorios.route) {
             ListaRecordatoriosUI(navController)
         }
-        composable("registro") { RegistroRecordatoriosUI(navController, viewModel) }
+        composable("registro") { RegistroRecordatoriosUI(navController) }
         composable("lista") { ListaRecordatoriosUI(navController) }
     }
 }

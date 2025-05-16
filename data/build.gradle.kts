@@ -8,7 +8,8 @@ java {
 }
 dependencies {
     implementation(project(":domain"))
-    implementation(libs.kotlinx.coroutines.core) // Para Flow
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.androidx.room.common.jvm) // Para Flow
 
 }
 kotlin {
